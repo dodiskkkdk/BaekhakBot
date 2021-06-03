@@ -9,10 +9,10 @@ body {
 
 .chat_window {
     position: absolute;
-    width: calc(100% - 20px);
-    max-width: 800px;
-    height: 500px;
-    border-radius: 10px;
+    width: calc(100%);
+    max-width: 1010px;
+    height: 650px;
+    border-radius: 30px;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
@@ -43,20 +43,20 @@ body {
 }
 
 .top_menu .buttons .button.close_button {
-    background-color: #f5886e;
+    /*background-color: #f5886e;*/
 }
 
 .top_menu .buttons .button.minimize {
-    background-color: #fdbf68;
+    /*background-color: #fdbf68;*/
 }
 
 .top_menu .buttons .button.maximize {
-    background-color: #a3d063;
+   /* background-color: #a3d063;*/
 }
 
 .top_menu .title {
     text-align: center;
-    color: #bcbdc0;
+    color: #000000;
     font-size: 20px;
 }
 
@@ -65,7 +65,7 @@ body {
     list-style: none;
     padding: 20px 10px 0 10px;
     margin: 0;
-    height: 347px;
+    height: 510px;
     overflow: scroll;
 }
 
@@ -75,45 +75,59 @@ body {
     margin-bottom: 20px;
     transition: all 0.5s linear;
     opacity: 0;
+
 }
 
 .messages .message.left .avatar {
-    background-color: #f5886e;
+    background-image: url("https://www3.chosun.ac.kr/sites/chosun/images/bs-char2.png");
+    /*background-color: #8fb2fd;*/
+    
+    object-fit:cover;
     float: left;
 }
 
 .messages .message.left .text_wrapper {
-    background-color: #ffe6cb;
+    background-color: #8fb2fd;
     margin-left: 20px;
+    font-weight: bold;
 }
 
 .messages .message.left .text_wrapper::after, .messages .message.left .text_wrapper::before {
     right: 100%;
-    border-right-color: #ffe6cb;
+    border-right-color: #8fb2fd;
+    font-weight: bold;
 }
 
 .messages .message.left .text {
-    color: #c48843;
+    color: #FFFFFF;
+    font-weight: bold;
 }
 
 .messages .message.right .avatar {
-    background-color: #fdbf68;
+    /*ackground-color: #8fb2fd;*/
     float: right;
 }
 
+.message.left.avatar.profileimg {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
 .messages .message.right .text_wrapper {
-    background-color: #c7eafc;
-    margin-right: 20px;
+    background-color: #ffffff;
+    margin-right: -45px;
     float: right;
+
 }
 
 .messages .message.right .text_wrapper::after, .messages .message.right .text_wrapper::before {
     left: 100%;
-    border-left-color: #c7eafc;
+    border-left-color: #ffffff;
 }
 
 .messages .message.right .text {
-    color: #45829b;
+    color: #000000;
 }
 
 .messages .message.appeared {
@@ -131,9 +145,10 @@ body {
     display: inline-block;
     padding: 20px;
     border-radius: 6px;
-    width: calc(100% - 85px);
+    width: calc(100%-0);
     min-width: 100px;
     position: relative;
+    
 }
 
 .messages .message .text_wrapper::after, .messages .message .text_wrapper:before {
@@ -159,6 +174,7 @@ body {
 .messages .message .text_wrapper .text {
     font-size: 18px;
     font-weight: 300;
+    font-weight: bold;
 }
 
 .bottom_wrapper {
@@ -194,9 +210,9 @@ body {
     width: 140px;
     height: 50px;
     display: inline-block;
-    border-radius: 50px;
-    background-color: #a3d063;
-    border: 2px solid #a3d063;
+    border-radius: 15px;
+    background-color: #4d85fe;
+    border: 2px solid #4d85fe;
     color: #fff;
     cursor: pointer;
     transition: all 0.2s linear;
@@ -205,7 +221,7 @@ body {
 }
 
 .bottom_wrapper .send_message:hover {
-    color: #a3d063;
+    color: #4d85fe;
     background-color: #fff;
 }
 
