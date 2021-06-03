@@ -3,7 +3,7 @@
 @since 7/1/2020
 @see https://github.com/gusdnd852
 """
-
+from kocrawl.chosun import ChosunCrawler
 from kocrawl.dust import DustCrawler
 from kocrawl.weather import WeatherCrawler
 from kochat.app import Scenario
@@ -42,5 +42,13 @@ travel = Scenario(
     scenario={
         'LOCATION': [],
         'PLACE': ['관광지']
+    }
+)
+
+school = Scenario(
+    intent='school',
+    api=ChosunCrawler().request,
+    scenario={
+        'INFO': []
     }
 )
