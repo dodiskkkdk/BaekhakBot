@@ -1,0 +1,7 @@
+Chrome 업데이트
+버전 95.0.4638.54 (64bit)
+
+Selenium으로 사용중인 크롬드라이버도 업데이트 필요
+1) https://chromedriver.chromium.org/downloads 해당 링크 접속 
+2) ChromeDriver 95.0.4638.17 다운 (win32bit)
+3) 드라이버 경로 재설정
