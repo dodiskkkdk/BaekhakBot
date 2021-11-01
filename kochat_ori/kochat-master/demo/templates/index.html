@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>백학봇 알파</title>
@@ -7,7 +7,14 @@
     
     <script src="{{ url_for('static', filename='js/bootstrap.js') }}" type="text/javascript"></script>
     <script src="{{ url_for('static', filename='js/jquery.js') }}" type="text/javascript"></script>
-    
+
+    <script type="text/javascript">
+    function googleTranslateElementInit() {S
+        new google.translate.TranslateElement({pageLanguage: 'ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <!--<script src="../static/js/main.js" type="text/javascript"></script>-->
 
     <link rel="profileimg" type="image/png" href="https://www3.chosun.ac.kr/sites/chosun/images/bs-char1.png">
@@ -20,7 +27,7 @@
 </head>
 
 <body>
-  
+
 <div class="chat_window">
     <div class="top_menu">
         <div class="buttons">
@@ -58,5 +65,6 @@
         </div>
     </li>
 </div>
+<div id="google_translate_element"></div>
 </body>
 </html>
