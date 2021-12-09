@@ -3,6 +3,32 @@ let userName = '학우';
 let state = 'SUCCESS';
 let counter = 0;
 
+function setDisplayAppreance(self){
+    var body = document.querySelector('body');
+    var btn = document.getElementById('btnDisplayMode');
+    var message_windows = document.getElementById('message');
+    var my = document.body;
+	if(self.value === '다크모드'){  //다크모드로 전환 버튼을 누른 경우
+      body.style.backgroundColor = '#121212';  //배경색 변경
+      body.style.color = 'white'; //css가 적용되지 않은 기본 텍스트 색상 변경
+      //btn.style.backgroundColor = "yellow"; //버튼의 배경색 변경
+      btn.style.color = "yellow"; //버튼의 텍스트 색상 변경- 사실상 투명
+      self.value = '라이트모드';
+	  message_windows.left.text_wrapper.style.backgroundColor = "black"; //말풍선 색
+
+
+
+
+    } else { //라이트모드로 전환 버튼을 누른 경우
+      body.style.backgroundColor = 'white';
+      body.style.color = 'black';
+      //btn.style.backgroundColor = "black";
+      btn.style.color = "black";
+      self.value = '다크모드';
+
+    }
+  }
+
 
 // functions
 function Message(arg) {
@@ -91,7 +117,7 @@ function setUserName(username) {
 
 function requestChat(messageText, url_pattern) {
 	$.ajax({
-		url: "http://127.0.0.1:8080/" + url_pattern + '/' + userName + '/' + messageText,
+		url: "http://127.0.0.1:9080/" + url_pattern + '/' + userName + '/' + messageText,
 		type: "GET",
 		dataType: "json",
 		success: function(data) {
@@ -132,17 +158,33 @@ function onSendButtonClicked() {
 			setTimeout(function() {
 				return sendMessage("천만에요. 더 물어보실 건 없나요?", 'left');
 			}, 1000);
-		} else if (messageText.includes('시험') || messageText.includes('시험기간')
-		            || messageText.includes('기말고사')) {
+		} else if (messageText.includes('지름길')) {
 			setTimeout(function() {
-				return sendMessage("2학기 기말고사 기간은 2021.12.16(목) ~ 2021.12.22(수)입니다 :)", 'left');
+				return sendMessage("답변", 'left');
 			}, 1000);
 
-		} else if (messageText.includes('수업평가') || messageText.includes('수업 평가')
-		            || messageText.includes('평가')) {
-			setTimeout(function() {
-				return sendMessage("2학기 수업평가 기간은 2021.11.26(금) ~ 2021.12.15(수) 입니다 :)", 'left');
-			}, 1000);
+		} else if (messageText.includes('시험') || messageText.includes('시험기간')
+                  || messageText.includes('기말고사')) {
+         setTimeout(function() {
+            return sendMessage("2학기 기말고사 기간은 2021.12.16(목) ~ 2021.12.22(수)입니다 :)", 'left');
+         }, 1000);
+         }
+
+           else if (messageText.includes('장학금') || messageText.includes('성적 장학금'))
+         {
+         setTimeout(function() {
+            return sendMessage("<a href = \"https://www.chosun.ac.kr/user/indexSub.do?codyMenuSeq=339038&siteId=scho\" target = \"_blank\">" +
+				"성적 장학금 관련 정보는 여기를 누르시면 확인 가능합니다. :)"
+				, 'left'); }, 1000);
+
+
+        }
+       else if (messageText.includes('수업평가') || messageText.includes('수업 평가')
+                  || messageText.includes('평가')) {
+         setTimeout(function() {
+            return sendMessage("2학기 수업평가 기간은 2021.11.26(금) ~ 2021.12.15(수) 입니다 :)", 'left');
+         }, 1000);
+
 
 		} else if (messageText.includes('결석') || messageText.includes('출석 기준')) {
 			setTimeout(function() {
@@ -562,18 +604,19 @@ function onSendButtonClicked() {
 		}
 
 		else if (messageText.includes('수강신청')) {
-			setTimeout(function() {
-				return sendMessage('2022학년도 1학기 수강신청은 2022.02.21(월) ~ 2022.02.26(토) 입니다.', 'left');
-			}, 1000);
-		}
+         setTimeout(function() {
+            return sendMessage('2022학년도 1학기 수강신청은 2022.02.21(월) ~ 2022.02.26(토) 입니다.', 'left');
+         }, 1000);
+      }
 
-		else if (messageText.includes('성적조회') || messageText.includes('성적 조회')) {
-			setTimeout(function() {
-				return sendMessage("2021학년도 2학기 성적열람 및 정정기간은 2021.12.30(목) ~ 2022.01.05(수)입니다 :) " +
-				"<br>" +
-				"성적조회는 종합정보시스템(wing.chosun.ac.kr) 또는 학교사이트(chosun.ac.kr) 로그인 후, 학사-나의 학사조회- 금학기 성적조회로 조회 가능합니다.", 'left');
-			}, 1000);
-		}
+      else if (messageText.includes('성적조회') || messageText.includes('성적 조회')) {
+         setTimeout(function() {
+            return sendMessage("2021학년도 2학기 성적열람 및 정정기간은 2021.12.30(목) ~ 2022.01.05(수)입니다 :) " +
+            "<br>" +
+            "성적조회는 종합정보시스템(wing.chosun.ac.kr) 또는 학교사이트(chosun.ac.kr) 로그인 후, 학사-나의 학사조회- 금학기 성적조회로 조회 가능합니다.", 'left');
+            }, 1000);
+         }
+
 
 		else if (messageText.includes('주차장') || messageText.includes('주차요금')) {
 			setTimeout(function() {
@@ -634,11 +677,12 @@ function onSendButtonClicked() {
 		}
 
 		else if (messageText.includes('계절학기') || messageText.includes('동계 계절학기') ||
-			messageText.includes('동계계절학기')) {
-			setTimeout(function() {
-				return sendMessage('동계 계절학기는 2022.01.03(월) ~ 2022.01.21(금) 입니다.', 'left');
-			}, 1000);
-		}
+         messageText.includes('동계계절학기')) {
+         setTimeout(function() {
+            return sendMessage('동계 계절학기는 2022.01.03(월) ~ 2022.01.21(금) 입니다.', 'left');
+         }, 1000);
+      }
+
 
 
 		else if (messageText.includes('학식') || messageText.includes('글로벌학사 학식') ||
@@ -692,4 +736,6 @@ function onSendButtonClicked() {
 
 
 	}
+
+
 }

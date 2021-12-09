@@ -11,50 +11,6 @@ width : 1170px;
 max-weight : none !important;
 }  고정형*/
 
-#google_translate_element > div > div > select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    display: block;
-    width: 100%;
-    max-width: 120px;
-    height: 30px;
-    float: right;
-    margin: 5px 0px;
-    padding: 0px 24px;
-    font-size: 13px;
-    line-height: 1.75;
-    color: #333;
-    border: 1px solid #cccccc;
-    -ms-word-break: normal;
-    word-break: normal;
-    border-radius: 10px;
-}
-
-#google_translate_element > div > div {
-   position: relative;
-   min-width: 10px;
-   height: 0px;
-}
-#google_translate_element > div > div > select::-ms-expand {
-    display: none;
-}
-
-#google_translate_element > div > div:after {
-    content: '>'; /* 목록 펼침 아이콘 */
-    font: 20px "Consolas", monospace;
-    color: #333;
-    transform: rotate(90deg);
-    right: 12px;
-    top: 6px;
-    padding: 2 0 0px;
-    border-bottom: 3px solid #999;
-    position: absolute;
-    pointer-events: none;
-}
-
-
-
 .top_menu.btnDisplayMode {
     position : absolute;
     float: right;
